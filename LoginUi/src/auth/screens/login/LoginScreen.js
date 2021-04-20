@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StatusBar, Image, TextInput } from 'react-native';
+import { View, Text, StatusBar, Image, TextInput, Button, TouchableHighlight, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Styles from './LoginStyles';
 import Colors from '../../../shared/colors/Colors';
@@ -13,6 +13,12 @@ const LoginScreen = () => {
         <View style={Styles.inputDataContainer}>
             <TextInput placeholder="Email" style={Styles.inputData}></TextInput>
             <TextInput placeholder="Password" style={Styles.inputData}></TextInput>
+            <Button title="Login"></Button>
+            <TouchableOpacity>
+                <LinearGradient style={Styles.loginButton} colors={[Colors.primarycolor, Colors.secondaryColor]}>
+                    <Text>Login</Text>
+                </LinearGradient>
+            </TouchableOpacity>
         </View>
     </View>
 }

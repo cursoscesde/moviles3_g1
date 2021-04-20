@@ -42,6 +42,13 @@ const Styles = StyleSheet.create({
         shadowOpacity: 0.27,
         shadowRadius: 4.65,
         elevation: 6,
+    },
+    loginButton: {
+        width: Dimensions.get("screen").width * 0.85,
+        padding: 20,
+        borderRadius: 50,
+        marginTop: 40,
+        alignItems: "center"
     }
 });
 
