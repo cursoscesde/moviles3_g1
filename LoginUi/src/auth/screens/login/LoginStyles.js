@@ -49,6 +49,9 @@ const Styles = StyleSheet.create({
         borderRadius: 50,
         marginTop: 40,
         alignItems: "center"
+    },
+    textLoginbButton: {
+        color: "white"
     }
 });
 
