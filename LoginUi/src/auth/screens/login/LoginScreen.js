@@ -3,6 +3,7 @@ import { View, Text, StatusBar, Image, TextInput, Button, TouchableHighlight, To
 import LinearGradient from 'react-native-linear-gradient';
 import Styles from './LoginStyles';
 import Colors from '../../../shared/colors/Colors';
+
 const LoginScreen = ({navigation}) => {
     
     const [email, setEmail] = useState("");
