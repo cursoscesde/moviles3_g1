@@ -1,29 +1,24 @@
-import React, {useEffect, useState} from 'react';
-import {View, Text, FlatList} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import ListUsersStyles from './ListUsersStyles';
+import UsersService from '../../services/UsersService';
+import UserComponent from '../../components/user-component/UserComponent';
 
 const ListUsersScreen = () => {
     const [users, setUsers] = useState([]);
     const getUsers = async () => {
-        const response = await fetch('https://reqres.in/api/users?page=2');
-        const jsonResponse = await response.json();
-        setUsers(jsonResponse.data);
-        // console.log(jsonResponse.data);
-    }
-    const Item = (props) =>{
-        user = props.user;
-        // position = props.position;
-        console.log(props)
-        return <Text>{user.first_name}</Text>
+        const users = await UsersService.getUsers();
+        console.log(users);
+        setUsers(users);
     }
 
-   
-    useEffect(()=>{
+    useEffect(() => {
         getUsers();
-    },[]);
+    }, []);
     return <View style={ListUsersStyles.container}>
-        <FlatList data={users} renderItem={({item, index}) => <Item user={item} position={index}></Item>}>
-
+        <FlatList data={users} renderItem={({ item, index }) => <TouchableOpacity onPress={() => UsersService.getUser(item.id)}>
+            <UserComponent id={item.id} user={item} position={index}></UserComponent>
+        </TouchableOpacity>}>
         </FlatList>
     </View>
 }
