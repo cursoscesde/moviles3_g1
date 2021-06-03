@@ -7,7 +7,7 @@ import SplashStyles from './SplashStyles';
 const SplashScreen = ({navigation}) => {
     const waitingTimeSplash = () =>{
         setTimeout(() =>{
-            navigation.navigate('ListUsers');
+            navigation.navigate('Login');
         }, 3000);
     }
     useEffect(()=>{

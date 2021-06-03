@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text, Button} from 'react-native';
 
-const ListApartmentsScreen = ({navigation}) =>{
-
+const ListApartmentsScreen = ({route, navigation}) =>{
+    const {email, id} = route.params;
     const goToLogin = () =>{
         navigation.navigate('Login');
     }

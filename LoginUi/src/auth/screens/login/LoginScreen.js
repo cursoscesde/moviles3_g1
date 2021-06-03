@@ -13,9 +13,13 @@ const LoginScreen = ({navigation}) => {
             Alert.alert("Todos los campos debe estar llenos");
         }
         else{
+            
+            navigation.navigate("ListApartments", {
+                email: email,
+                id: 5
+            });
             setEmail("");
             setPassword("");
-            navigation.navigate("ListApartments");
         }
     }
     return <View style={Styles.container}>
